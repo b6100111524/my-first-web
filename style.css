@@ -6,8 +6,9 @@
   background-color: #003377;  /*背景色*/
   position: fixed;            /*固定在網頁視窗*/
   top: 0;
+  right: 0;
   left: 0;
-  right: 0;                   /*按鈕欄向 上 左 右延伸 0*/
+  /*width: 100%;                /*按鈕欄向 上 左 右延伸 0*/
   z-index: 100;
 }
 .menu {
@@ -17,7 +18,7 @@
 .menu li {
   display: inline-block;      /*自動填滿排版****** */
   width: 150px;               /*block預設與文字同寬 修改成固定寬度*/
-  padding: 10px 0px;
+  padding: 5px 0px;
   margin: 5px;
 
   border: 2px solid #fff;     /*編框線條 顏色*/
@@ -28,10 +29,9 @@
   color: #fff;                /*文字顏色*/
 }
 #menu-p {                     /*個人iocn*/
-  width: 50px;
   position: relative;
-  top: 5px;
-  right: 250px;
+  top: 15px;
+  width: 50px;
   float: left;
 }
 
@@ -98,7 +98,7 @@ hr {
 }
 hr.bar {
   border: 2px solid #003377;
-  width: 780px;
+  width: 100%;
 }
 /*------------------------*/
 
@@ -169,16 +169,92 @@ form.contact-form {
 /*------------------------*/
 #content {
   position: relative;
-  top: 88px;
+  top: 40px;
   padding: 10px;
 }
 #content > .container > div {
   padding: 20px 0;
+  width: 100%;
 }
-
 .container {
   /*border: 1px solid #ccc;*/
-  width: 800px;
   margin: 0 auto;
+}
+
+
+
+
+@media screen and (min-width: 1024px) {
+  .container {
+    width: 800px;
+  }
+  .menu-button ,
+  .menu-button-checkbox {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  #nav {
+    width: 100%;
+  }
+  .container {
+    width: auto;
+  }
+  .menu-button {
+    float: right;
+    font-size: 25px;
+    line-height: 60px;
+    color: white;
+    background: transparent;
+    padding: 0 15px;
+    border: 0;
+  }
+  .menu-button-checkbox {
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    right: 0;
+    width: 52px;
+    height: 52px;
+  }
+
+  .menu-button-checkbox:checked ~ .menu {
+    display: block;
+  }
+
+  .menu {
+    display: none;
+    margin-top: 0;
+    padding: 0;
+    position: fixed;
+    right: 0;
+    top: 40px;
+    width: 160px;
+    height: 100%;
+    background: #003377;
+  }
+  #menu-p {                     /*個人iocn*/
+    top: 6px;
+    left: 10px;
+  }
+
+  #my-avatar {
+    width: 100%; 
+  }
+  #my-avatar img {
+    display: block;
+    margin: 15px auto;
+    border: 0;
+    border-radius: 0;
+  }
+ 
+  .item {
+    max-width: 100%;
+  }
+  form.contact-form {
+    width: 80%;
+  }
+
 }
 
